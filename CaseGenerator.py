@@ -31,12 +31,13 @@ court_acronyms_new = ('AA', 'AP', 'CAAF', 'CACC', 'CACL', 'CACO',
                       'AMT', 'NRT', 'DIS', 'LIT', 'SEB', 'CVT', 'WIL')
 
 # Certified optional letters (by observation) include B, C, M, and L(RB)
-optional_letters = ['B', 'C', 'M', 'L(RB)']  # TODO: Need to confirm these are all the possible optional letters.
-
-# The actual generator. Seems to work. Make a function? Or make case input and data collection function?
+optional_letters = ('B', 'C', 'M', 'L(RB)')  # TODO: Need to confirm these are all the possible optional letters.
 
 
-def generate_court_codes(initial_year=1900, end_year=current_year):
+# Case number generator; for now, simply prints all possible combinations.
+
+
+def generate_court_codes(initial_year=1900, end_year=current_year):  # 1900 is the earliest possible year to search.
     for year in range(initial_year, end_year + 1):
         for court in court_acronyms_old:
             for num in range(0, 1000000):
@@ -48,3 +49,6 @@ def generate_court_codes(initial_year=1900, end_year=current_year):
                         print(str(year) + court + code + letter)
                 else:
                     print(str(year) + court + code)
+
+
+print(generate_court_codes())

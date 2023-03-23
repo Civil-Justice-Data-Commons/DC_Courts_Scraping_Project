@@ -48,13 +48,13 @@ driver.get(search_page)
 time.sleep(1)  # TODO: Need to implement webdriverwait rather than time sleep for efficiency
 
 # Establishing case number for test and xpath of salient elements to click on webpage.
-case_number = '2017-CA-007366-B'  # TODO: Need to find other cases to experiment with to ensure consistency
+case_number = '2017-CA-007366-B'
 case_search = driver.find_element(By.XPATH, '//input[@id="caseCriteria_SearchCriteria"]')
 search_button = driver.find_element(By.XPATH, '//input[@class="form-control"]')
 search_by_date_from = driver.find_element(By.XPATH, '//input[@id="SearchCriteria_DateFrom"]')
 search_by_date_to = driver.find_element(By.XPATH, '//input[@id="SearchCriteria_DateTo"]')
 
-# TODO: START NEW EDITS HERE: How do I select an item in the menu for the case number selection?
+# TODO: START NEW EDITS HERE: Select an item in the menu for the case number selection
 
 # Initializing wait.
 wait = WebDriverWait(driver, 20)
@@ -92,6 +92,6 @@ parties = case_name.split(' Vs. ')
 plaintiff = parties[0]
 defendant = parties[1]
 
-# Print to ensure extraction was successful.
+# Testing print to ensure extraction was successful.
 print(case_name)
-print(f'The case involves {plaintiff} versus {defendant}.')  # TODO: See how James prefers data to be extracted
+print(f'The case involves {plaintiff} versus {defendant}.')
