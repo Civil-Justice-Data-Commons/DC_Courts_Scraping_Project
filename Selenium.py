@@ -29,9 +29,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 # tqdm to make progress bars look nice
 from tqdm import tqdm
 
-# Looking at DC Civil Court, case numbers can look like as follows:
-# * 2017-CA-007366-B
-# * Will use case number above for initial testing
+# Program for testing and playing around with Selenium on court site
+# 2017-CA-007366-B ---> Will use this case number for initial testing
 
 # Initialize webdriver with Firefox, running in headless mode for efficiency.
 options = Options()
@@ -55,7 +54,7 @@ search_button = driver.find_element(By.XPATH, '//input[@class="form-control"]')
 search_by_date_from = driver.find_element(By.XPATH, '//input[@id="SearchCriteria_DateFrom"]')
 search_by_date_to = driver.find_element(By.XPATH, '//input[@id="SearchCriteria_DateTo"]')
 
-# TODO: How do I select an item in the menu for the case number selection?
+# TODO: START NEW EDITS HERE: How do I select an item in the menu for the case number selection?
 
 # Initializing wait.
 wait = WebDriverWait(driver, 20)

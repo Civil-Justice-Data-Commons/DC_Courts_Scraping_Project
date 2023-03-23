@@ -11,7 +11,7 @@
 * List of possible 3 letter strings for case number searches can be found on pgs. 10-11 here:
   * https://www.dccourts.gov/sites/default/files/portal/Portal_Case_Search_Guide_2022.pdf
 
-## Summary as of 3/21/2023:
+## Update for 3/21/2023:
 * Found way to circumvent captcha on website, so all of that lovely code is completely and utterly useless.
 * Reading through documentation from Selenium directly was very helpful (as was reviewing James Carey's prior code)
 * Case number generator and scope of how to establish a search (i.e., does user input starting year? Do we scrape _every_ case possible? Need to check with James).
