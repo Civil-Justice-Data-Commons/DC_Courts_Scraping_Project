@@ -1,11 +1,10 @@
 # Program for testing around with case numbers for project
 # Case Numbers are defined as: YYYY-CourtAcronym-SixDigitNumber-OptionalLetter
-# The dashes in the number are not necessary
+# It *seems* that only cases with the 'CA' acronym require an optional letter. Code reflects this.
+# The dashes in the case number are not necessary
 
-# Importing current date for default final year in generator.
+# Importing current date for default end year in generator.
 from datetime import date
-
-# Initializing current year for default end year in generator.
 current_year = date.today().year
 
 # Court acronyms for the majority of cases (prior to Oct. 31, 2022).
