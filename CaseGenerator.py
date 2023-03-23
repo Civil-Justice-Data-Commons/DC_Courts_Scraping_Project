@@ -1,6 +1,12 @@
 # Program for testing around with case numbers for project
-# Case Numbers can be seen as: YYYY-CourtAcronym-SixDigitNumber-OptionalLetter
+# Case Numbers are defined as: YYYY-CourtAcronym-SixDigitNumber-OptionalLetter
 # The dashes in the number are not necessary
+
+# Importing current date for default final year in generator.
+from datetime import date
+
+# Initializing current year.
+current_year = date.today().year
 
 # Court acronyms for the majority of cases (prior to Oct. 31, 2022).
 court_acronyms_old = ['CA', 'CA1', 'CA2',  # This 'CA' I add due to seeing cases with it, but not in documentation.
@@ -25,25 +31,13 @@ court_acronyms_new = ['AA', 'AP', 'CAAF', 'CACC', 'CACL', 'CACO',
                       'AMT', 'NRT', 'DIS', 'LIT', 'SEB', 'CVT', 'WIL']
 
 #  Certified optional letters (by observation) include B, C, M, and L(RB)
-optional_letters = ['B', 'C', 'M', 'L(RB)']
+optional_letters = ['B', 'C', 'M', 'L(RB)']  # TODO: Need to confirm these are all the possible optional letters.
 
 # The actual generator. Seems to work. Make a function? Or make case input and data collection function?
 
-# for year in range(1900, 2024):
-#     for court in court_acronyms_old:
-#         for num in range(0, 1000000):
-#             code = str(num)
-#             while len(code) < 6:
-#                 code = '0' + code
-#             if court == 'CA':
-#                 for letter in optional_letters:
-#                     print(str(year) + court + code + letter)
-#             else:
-#                 print(str(year) + court + code)
 
-
-def generate_court_codes(initial_year=1900, end_year=2024):
-    for year in range(initial_year, end_year):
+def generate_court_codes(initial_year=1900, end_year=current_year):
+    for year in range(initial_year, end_year + 1):
         for court in court_acronyms_old:
             for num in range(0, 1000000):
                 code = str(num)
