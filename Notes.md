@@ -1,3 +1,7 @@
+# Notes re Grading & Due Date for this Project
+* The day before his grades are due for 3L; even after finals, so precise date will be known soon, but it's after finals.
+* The write-up can be 3-4, 7-8 pages; lots of writing, with small reflection section at the end. Not too time-consuming.
+
 # Notes re: Website
 * Captcha will begin testing for images after I ran about 5 tests. Going to test to see how long it takes for it to reset (an hour? maybe a day?)
   * Appears to be long-lasting, turning off VPN necessary, but it will "time-out" after about 3 searches. May be problematic.

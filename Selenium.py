@@ -36,6 +36,7 @@ from tqdm import tqdm
 options = Options()
 options.add_argument("-headless")
 driver = webdriver.Firefox(options=options)
+
 # Line below written for seeing window for testing purposes.
 driver = webdriver.Firefox()
 

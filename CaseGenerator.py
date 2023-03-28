@@ -32,7 +32,7 @@ court_acronyms_new = ('AA', 'AP', 'CAAF', 'CACC', 'CACL', 'CACO',
 # Certified optional letters (by observation) include B, C, M, and L(RB)
 optional_letters = ('B', 'C', 'M', 'L(RB)')  # TODO: Need to confirm these are all the possible optional letters.
 
-
+# Depending on scope of scraper, need to implement new acronyms for scraping post-10/31/22
 # Case number generator; for now, simply prints all possible combinations.
 
 
@@ -50,4 +50,4 @@ def generate_court_codes(initial_year=1900, end_year=current_year):  # 1900 is t
                     print(str(year) + court + code)
 
 
-print(generate_court_codes())
+print(generate_court_codes(2012))
