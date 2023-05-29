@@ -31,19 +31,21 @@ from tqdm import tqdm
 
 # Import datetime to setup default "date-to" for today.
 from datetime import date
+
 today = date.today().strftime("%m/%d/%Y")
 
 
-def single_scrape(case_number, date_from='01/01/1900', date_to=today):
+# Single scrape function sets out test for scraping from one document page.
+# date_from set to earliest possible date allowed on the site by default to maximize range.
+
+def single_scrape(case_number, date_from='01/01/1900', date_to=today, headless=True):
     # Initialize webdriver with Firefox, running in headless mode for efficiency.
     options = Options()
-    options.add_argument("-headless")
+    if headless:
+        options.add_argument("-headless")
     driver = webdriver.Firefox(options=options)
 
-    # Line below written for seeing window for testing purposes.
-    driver = webdriver.Firefox()
-
-    # Testing case data extraction with random Jane Doe case.
+    # Initializing the driver with the search portal.
     search_page = 'https://portal-dc.tylertech.cloud/Portal/Home/Dashboard/26'
     driver.get(search_page)
 
@@ -86,19 +88,16 @@ def single_scrape(case_number, date_from='01/01/1900', date_to=today):
             driver.switch_to.window(window_handle)
             break
 
-    # Locates case name, prints it, closes tab. Used in testing for now.
+    # Locates case name, prints it, closes tab.
     case_name = By.XPATH, '//span[@class="roa-text-bold ng-binding"]'
     wait.until(EC.presence_of_element_located(case_name))
     case_name = driver.find_element(By.XPATH, '//span[@class="roa-text-bold ng-binding"]').text
     print(case_name)
     driver.close()
 
-    # DATA TO GATHER:
-    # Parties
-    # Attorneys
-    # Dispositions
-    # Docket
-    # Status
-    # File-date
 
-single_scrape(case_number="2003-ADM-001639")
+# Included the two functions below here to demonstrate. First shows it headless, second shows Selenium running in
+# action.
+
+single_scrape(case_number="2003-ADM-001639", headless=False)
+single_scrape(case_number="2017-CA-007366-B")

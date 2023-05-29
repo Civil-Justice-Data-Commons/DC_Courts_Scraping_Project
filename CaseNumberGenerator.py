@@ -29,8 +29,10 @@ court_acronyms_new = ('AA', 'AP', 'CAAF', 'CACC', 'CACL', 'CACO',
                       'UAA', 'FEP', 'ADM', 'AMC', 'AMF', 'AMP', 'AMS',
                       'AMT', 'NRT', 'DIS', 'LIT', 'SEB', 'CVT', 'WIL')
 
-# Certified optional letters (by observation) include B, C, M, and L(RB)
-optional_letters = ('B', 'C', 'M', 'L(RB)')
+# Certified optional letters (by observation) include B, C, M, and L(RP)
+# For some reason, the website does not accept case numbers using L(RP) even though such cases exist.
+# Hence, removing L(RB) to prevent errors.
+optional_letters = ('B', 'C', 'M')
 
 # Depending on scope of scraper, need to implement new acronyms for scraping post-10/31/22
 # Would need to take into specific dates as input or ask user if they want cases beyond that date, whichever
@@ -53,4 +55,5 @@ def generate_court_codes(initial_year=1900, end_year=current_year):
                     print(str(year) + court + code)
 
 
+# Included here to demonstrate.
 generate_court_codes(2012)
