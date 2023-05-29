@@ -22,3 +22,14 @@
 * Selenium is a headache, but it's starting to make sense.
 * Based on browsing through random cases, it looks as though the case numbers with a 'CA' (like the example case) have a random character at the end; some even had L(RB).
   * While I'm not sure what that letter means, it does mean that the other combinations not using 'CA' don't need an optional letter. Made a note of this in my code.
+
+## Update for 5/22/2023
+* Just graduated. Have until the end of this coming weekend to finalize and finish my code.
+* Circumstances of graduation and the like are making it difficult to polish this code fully.
+* However, I think I can get this code finished, if not very close to a finalized and polished state for James.
+
+## Update for 5/28/2023
+* Adapting the code for the new search page has been mostly painless so far.
+* Figuring out which data to capture and how to store it is the part I'm most nervous about so far.
+* However, I think locating the xpaths and getting the search code generator to work properly are the hard parts for James, as he can likely adapt the code easily to export however he sees best fits.
+* Hence, I'm making the 'loop' of the program running through each case number the priority.
