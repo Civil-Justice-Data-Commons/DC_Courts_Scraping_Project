@@ -1,7 +1,7 @@
 # Program for testing around with case numbers for project
 # Case Numbers are defined as: YYYY-CourtAcronym-SixDigitNumber-OptionalLetter
 # It *seems* that only cases with the 'CA' acronym require an optional letter. Code reflects this.
-# The dashes in the case number are not necessary
+# The dashes in the case numbers are not necessary.
 
 # Importing current date for default end year in generator.
 from datetime import date
@@ -30,13 +30,16 @@ court_acronyms_new = ('AA', 'AP', 'CAAF', 'CACC', 'CACL', 'CACO',
                       'AMT', 'NRT', 'DIS', 'LIT', 'SEB', 'CVT', 'WIL')
 
 # Certified optional letters (by observation) include B, C, M, and L(RB)
-optional_letters = ('B', 'C', 'M', 'L(RB)')  # TODO: Need to confirm these are all the possible optional letters.
+optional_letters = ('B', 'C', 'M', 'L(RB)')
 
 # Depending on scope of scraper, need to implement new acronyms for scraping post-10/31/22
-# Case number generator; for now, simply prints all possible combinations.
+# Would need to take into specific dates as input or ask user if they want cases beyond that date, whichever
+#   is more convenient.
 
 
-def generate_court_codes(initial_year=1900, end_year=current_year):  # 1900 is the earliest possible year to search.
+def generate_court_codes(initial_year=1900, end_year=current_year):
+    # Function generates and (for now) prints every combination. Defaults are 1900 and current year as range of cases.
+    # 1900 is the earliest possible year to search.
     for year in range(initial_year, end_year + 1):
         for court in court_acronyms_old:
             for num in range(0, 1000000):
@@ -50,4 +53,4 @@ def generate_court_codes(initial_year=1900, end_year=current_year):  # 1900 is t
                     print(str(year) + court + code)
 
 
-print(generate_court_codes(2012))
+generate_court_codes(2012)

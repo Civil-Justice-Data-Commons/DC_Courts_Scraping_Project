@@ -95,6 +95,8 @@ driver.close()
 driver.switch_to.window(original_window)
 return_to_search = By.XPATH, '//p[@class="step-label"]'
 wait.until(EC.element_to_be_clickable(return_to_search)).click()
+case_search = driver.find_element(By.XPATH, '//input[@id="SearchCriteria_SearchValue"]')
+case_search.clear()
 case_search.send_keys('2017-CA-007366-B')
 
 ### Everything Below from Old Search Page Code ###
