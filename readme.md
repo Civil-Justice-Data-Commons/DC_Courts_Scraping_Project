@@ -1,6 +1,6 @@
 # DC Courts Scraping Project
 
-This scraping code was developed by John Eagle Miles [(@Jem379)] (https://github.com/Jem379/), a law student who partnered with the CJDC as part of Georgetown University Law Center's Computer Programing for Lawyers class.
+This scraping code was developed by John Eagle Miles [@Jem379](https://github.com/Jem379/), a law student who partnered with the CJDC as part of Georgetown University Law Center's Computer Programing for Lawyers class.
 
 It is a work-in-progress but may serve as a helpful example on how to scrape DC court websites.
 
